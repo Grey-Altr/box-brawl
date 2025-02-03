@@ -1,7 +1,7 @@
 # Project 1 - Browser Game Plan
 
 ### Note on proposals
-In either of the following projects, I'd like the opportunity to leverage the skills covered at GA, as well as those I had gained and utilized from my prior experience at Alchemy Code Lab, and the Creative Coding AS degree program at Portland Community College while maintaining the scope of this project assignment. Specifically, I'd like the opportunity to utilize `<canvas>` to render the projects. Either project will only utilize *HTML*, *CSS* and vanilla *JavaScript*.
+In either of the following projects, I'd like the opportunity to leverage the skills covered at GA, as well as those I had gained and utilized from my prior experience at Alchemy Code Lab, and the Creative Coding AS degree program at Portland Community College while maintaining the scope of this project assignment. Specifically, I'd like the opportunity to utilize the `<canvas>` element to render the projects. Either project will only utilize **HTML**, **CSS** and vanilla **JavaScript**.
 
 
 ## Proposal 1: Simple Platform Fighter
@@ -19,12 +19,12 @@ Player will be able to:
 
 ### Project Schedule
 
-* Day 1 - Implement player movement (walking jumping, falling).
-* Day 2 - Implement combat mechanics (attacks, hit detection, knockback).
-* Day 3 - Implement health system and health tracking.
-* Day 4 - Implement level elements (platform and background art) .
-* Day 5 - Debugging and  code clean-up.
-* Day 6 - Presentation preparation.
+* **Day 1** - Implement player movement (walking jumping, falling).
+* **Day 2** - Implement combat mechanics (attacks, hit detection, knockback).
+* **Day 3** - Implement health system and health tracking.
+* **Day 4** - Implement level elements (platform and background art) .
+* **Day 5** - Debugging and  code clean-up.
+* **Day 6** - Presentation preparation.
 
 ### Outcome
 
@@ -51,12 +51,12 @@ Player will be able to:
 
 ### Project Schedule
 
-* Day 1 - Implement player movement.
-* Day 2 - Implement items (food).
-* Day 3 - Implement timer.
-* Day 4 - Implement level elements (obstacles, boundaries and background art) .
-* Day 5 - Debugging and  code clean-up.
-* Day 6 - Presentation preparation.
+* **Day 1** - Implement player movement.
+* **Day 2** - Implement items (food).
+* **Day 3** - Implement timer.
+* **Day 4** - Implement level elements (obstacles, boundaries and background art) .
+* **Day 5** - Debugging and  code clean-up.
+* **Day 6** - Presentation preparation.
 
 ### Outcome
 
