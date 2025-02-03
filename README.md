@@ -3,6 +3,9 @@
 ### **Note on proposals**
 In either of the following projects, I'd like the opportunity to leverage the skills covered at GA, as well as those I had gained and utilized from my prior experience at Alchemy Code Lab, and the Creative Coding AS degree program at Portland Community College (PCC) while maintaining the scope of this project assignment. Specifically, I'd like the opportunity to utilize the `<canvas>` element to render the projects. Reference materials would include notes from GA, Alchemy, PCC, as well as online documentation. Either project will only utilize **HTML**, **CSS** and vanilla **JavaScript**.
 
+Where used references were necessary see (DRFI):
+Documentation Reference For Implementation
+
 
 ## **Proposal 1: Simple Platform Fighter**
 
@@ -40,11 +43,12 @@ By the end of the week, the project will deliver a fully functional, two-player 
 1. ***Game initialization:***
     - ~~Initialize canvas element in html~~
     - ~~Define get for canvas in app.js to render 2D context~~
-    - Define global variables:
+    - ~~Define global variables~~:
         ~~- Canvas size (width, height)~~
         ~~- Gravity (value defines y axis constant)~~
 1. ***Define character class:***
-    - Define class named "character" for player objects
+    - ~~Define class named "character" for player objects~~
+    (DRFI: [MDN: Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes))
     - Define stats for "character":
         - A screen position (x, y)
         - A movement velocity (velocityX, velocityY)

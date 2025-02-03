@@ -9,6 +9,19 @@ const gravity = 0;
 
 /* ------------------- variables ------------------- */
 
+class character {
+    constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.width = 0;
+        this.height = 0;
+        this.color = color;
+        this.velocityX = 0;
+        this.velocityY = 0;
+        this.grounded = false;
+        this.isAttacking = false;
+    }
+}
 
 /* ------------------- cache ------------------- */
 
