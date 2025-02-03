@@ -9,6 +9,7 @@ const gravity = 0;
 
 /* ------------------- variables ------------------- */
 
+/* -------------------  classes  ------------------- */ 
 class character {
     constructor(x, y, color) {
         this.x = x;
