@@ -35,7 +35,7 @@ By the end of the week, the project will deliver a fully functional, two-player 
 1. Dynamic stage interaction with platform collisions.
 1. Engaging local multiplayer battles.
 
-## Proposal 2: Snake Game
+## Proposal 2: Snake-style Game
 
 This game will be a Snake-style game, featuring one character, the Snake; a static level comprised of a top-down square with obstacles, stat tracking, and a timer. Players attempt to collect food before the timer counts down to zero.
 
