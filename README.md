@@ -19,12 +19,12 @@ Player will be able to:
 
 ### **Project Schedule**
 
-* **Day 1** - Implement player movement (walking, jumping, falling).
-* **Day 2** - Implement combat mechanics (attacks, hit detection, knockback).
-* **Day 3** - Implement health system and health tracking.
-* **Day 4** - Implement level elements (platform and background art) .
-* **Day 5** - Debugging and code clean-up.
-* **Day 6** - Presentation preparation.
+* **Day 1** - Implement player movement (walking, jumping, falling)
+* **Day 2** - Implement combat mechanics (attacks, hit detection, knockback)
+* **Day 3** - Implement health system and health tracking
+* **Day 4** - Implement level elements (platform and background art)
+* **Day 5** - Debugging and code clean-up
+* **Day 6** - Presentation preparation
 
 ### **Outcome**
 
@@ -38,13 +38,13 @@ By the end of the week, the project will deliver a fully functional, two-player 
 # Implementation Plan and Pseudocode for Simple Platform Fighter
 
 1. ***Game initialization:***
-    - ~~Initialize canvas element in html.~~
-    - Define get for canvas in app.js to render 2D screen.
+    - ~~Initialize canvas element in html~~
+    - Define get for canvas in app.js to render 2D context
     - Define global variables:
         - Canvas size (width, height)
         - Gravity (value defines y axis constant)
 1. ***Define character class:***
-    - Define class named "character" for player objects.
+    - Define class named "character" for player objects
     - Define stats for "character":
         - A screen position (x, y)
         - A movement velocity (velocityX, velocityY)
@@ -53,7 +53,7 @@ By the end of the week, the project will deliver a fully functional, two-player 
         - A marker to check the character is on the platform
     - Define methods for "character" to:
         - Draw on screen
-        - Track movement base on player input, knockback and gravity
+        - Track movement based on player input, knockback and gravity
         - Attacking the opponent applies knockback
         - Attacking the opponent applies damage (reduces health)
 1. ***Player Setup:***
@@ -107,12 +107,12 @@ Player will be able to:
 
 ### **Project Schedule**
 
-* **Day 1** - Implement player movement.
-* **Day 2** - Implement items (food).
-* **Day 3** - Implement timer.
-* **Day 4** - Implement level elements (obstacles, boundaries and background art) .
-* **Day 5** - Debugging and  code clean-up.
-* **Day 6** - Presentation preparation.
+* **Day 1** - Implement player movement
+* **Day 2** - Implement items (food)
+* **Day 3** - Implement timer
+* **Day 4** - Implement level elements (obstacles, boundaries and background art)
+* **Day 5** - Debugging and  code clean-up
+* **Day 6** - Presentation preparation
 
 ### **Outcome**
 
@@ -121,3 +121,48 @@ By the end of the week, the project will deliver a fully functional, one-player 
 1. Smooth movement.
 1. Real-time time tracking and UI updates.
 1. Dynamic stage interaction with obstacle collisions and item collection.
+
+# Implementation Plan and Pseudocode for Snake-style game
+
+1. ***Game initialization:***
+    - ~~Initialize canvas element in html~~
+    - Define get for canvas in app.js to render 2D context
+    - Define global variables:
+        - Canvas size (width, height)
+        - Positions of random food and obstacles
+        - Countdown timer
+1. ***Define snake class:***
+    - Define class named "snake" for player object
+    - Define stats for "snake":
+        - An initial screen position (x, y)
+        - A movement velocity (velocityX, velocityY)
+        - An initial length for "snake"
+    - Define methods for "snake" to:
+        - Draw on screen
+        - Track movement based on player input
+        - Eating food increases snake size
+        
+1. ***Player Setup:***
+    - Create player with "snake" class
+    - Assign initial position and size of snake at game start
+1. ***Eaten Setup:***
+    - Create create and render icon for food eaten
+    - Assign counter for food eaten
+    - Update counter when snake eats food
+1. ***Movement Setup:***
+    - Define eventLister for player control:
+        - Move left, right, up and down
+        - Snake always moves forward
+1. ***Collision and game-over state:***
+    - Colliding with walls, obstacles or tail triggers losing condition
+1. ***Game Loop***
+    - Clear canvas and redraw for animation
+    - Draw environment with random food and obstacle generation
+    - Initialize player position
+    - Update player position based on gameplay
+    - Register collisions between players, and players and platform
+    - Update food eaten when snake eats food
+    - Continuously run loop at appropriate framerate
+    - Call game function:
+        - Starts game and animation
+        - Initialize all systems for gameplay
