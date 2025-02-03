@@ -23,7 +23,7 @@ Player will be able to:
 * **Day 2** - Implement combat mechanics (attacks, hit detection, knockback).
 * **Day 3** - Implement health system and health tracking.
 * **Day 4** - Implement level elements (platform and background art) .
-* **Day 5** - Debugging and  code clean-up.
+* **Day 5** - Debugging and code clean-up.
 * **Day 6** - Presentation preparation.
 
 ### Outcome
