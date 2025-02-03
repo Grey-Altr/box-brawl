@@ -46,7 +46,7 @@ Player will be able to:
 1. Display clear instructions for the control of the player character.
 1. Move along the x and y axes of the the game area.
 1. Collect food.
-1. Track their stats through online display.
+1. Track their stats through on-screen display.
 1. Track time remaining for the session.
 
 ### **Project Schedule**
