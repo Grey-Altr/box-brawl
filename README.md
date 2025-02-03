@@ -41,8 +41,8 @@ By the end of the week, the project will deliver a fully functional, two-player 
     - ~~Initialize canvas element in html~~
     - ~~Define get for canvas in app.js to render 2D context~~
     - Define global variables:
-        - Canvas size (width, height)
-        - Gravity (value defines y axis constant)
+        ~~- Canvas size (width, height)~~
+        ~~- Gravity (value defines y axis constant)~~
 1. ***Define character class:***
     - Define class named "character" for player objects
     - Define stats for "character":
