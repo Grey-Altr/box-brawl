@@ -39,7 +39,7 @@ By the end of the week, the project will deliver a fully functional, two-player 
 
 1. ***Game initialization:***
     - ~~Initialize canvas element in html~~
-    - Define get for canvas in app.js to render 2D context
+    - ~~Define get for canvas in app.js to render 2D context~~
     - Define global variables:
         - Canvas size (width, height)
         - Gravity (value defines y axis constant)
@@ -107,10 +107,10 @@ Player will be able to:
 
 ### **Project Schedule**
 
-* **Day 1** - Implement player movement
+* **Day 1** - Implement game environment and player movement
 * **Day 2** - Implement items (food)
 * **Day 3** - Implement timer
-* **Day 4** - Implement level elements (obstacles, boundaries and background art)
+* **Day 4** - Implement level elements (obstacles, boundaries)
 * **Day 5** - Debugging and  code clean-up
 * **Day 6** - Presentation preparation
 
