@@ -19,7 +19,7 @@ Player will be able to:
 
 ### **Project Schedule**
 
-* **Day 1** - Implement player movement (walking jumping, falling).
+* **Day 1** - Implement player movement (walking, jumping, falling).
 * **Day 2** - Implement combat mechanics (attacks, hit detection, knockback).
 * **Day 3** - Implement health system and health tracking.
 * **Day 4** - Implement level elements (platform and background art) .
