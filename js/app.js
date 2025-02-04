@@ -100,6 +100,7 @@ function drawScreen() {
     ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
 
     player1.update();
+    player2.update();
     player1.draw();
     player2.draw();
 
@@ -126,9 +127,19 @@ window.addEventListener('keydown', (event) => {
         case 'w':
             player1.velocityY = jumpSpeed;
             break;
+        case 'ArrowLeft':
+            player2.velocityX = -playerSpeed;
+            break;
+        case 'ArrowRight':
+            player2.velocityX = playerSpeed;
+            break;
+        case 'ArrowUp':
+            player2.velocityY = jumpSpeed;
+            break;
     }
 });
 
 window.addEventListener('keyup', (event) => {
     if (event.key === 'a' || event.key === 'd') player1.velocityX = 0;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') player2.velocityX = 0;
 });
