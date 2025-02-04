@@ -15,7 +15,6 @@ const canvas = document.getElementById('gameScreen');
 const ctx = canvas.getContext('2d');
 window.addEventListener('resize', resizeCanvas);
 
-
 /* ------------------- constants ------------------- */
 
 // canvas size
@@ -51,6 +50,15 @@ const platform = {
     height: 20
 };
 
+
+
+
+/* ------------------- functions ------------------- */
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
 // draw platform
 function drawPlatform() {
 // ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -62,12 +70,5 @@ function drawPlatform() {
 };
 
 drawPlatform();
-
-
-/* ------------------- functions ------------------- */
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
 
 /* ------------------- event listeners ------------------- */
