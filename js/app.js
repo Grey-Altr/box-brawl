@@ -24,6 +24,14 @@ window.addEventListener('resize', resizeCanvas);
 // gravity
 const gravity = 0;
 
+// platform object
+const platform = {
+    x: 150,
+    y: 400,
+    width: 500,
+    height: 20
+};
+
 /* ------------------- variables ------------------- */
 
 /* -------------------  classes  ------------------- */
@@ -42,13 +50,7 @@ const gravity = 0;
 //     }
 //}
 
-// platform object
-const platform = {
-    x: 150,
-    y: 400,
-    width: 500,
-    height: 20
-};
+
 
 
 
@@ -61,7 +63,7 @@ function resizeCanvas() {
 
 // draw platform
 function drawPlatform() {
-// ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = 'brown';
     ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
