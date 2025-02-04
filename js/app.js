@@ -57,6 +57,11 @@ class character {
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
     
+    update() {
+        // gravity
+        this.velocityY += gravity;
+        this.y += this.velocityY;
+    }
 }
 
 const player1 = new character(200, 350, 'white');
@@ -86,6 +91,7 @@ function drawScreen() {
     ctx.fillStyle = 'brown';
     ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
 
+    player1.update();
     player1.draw();
     player2.draw();
 
