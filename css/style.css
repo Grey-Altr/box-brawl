@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+canvas {
+    background-color: skyblue;
+    display: block;
+    border: 2px solid white;
+    width: 100%;
+    height: 100%;
+}

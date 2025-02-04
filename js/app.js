@@ -1,8 +1,8 @@
 /* ------------------- constants ------------------- */
 
 // canvas size
-arena.width = 800;
-arena.height = 500;
+//canvas.width = 100%
+//canvas.height = 100%;
 
 // gravity
 const gravity = 0;
@@ -26,10 +26,13 @@ class character {
 
 /* ------------------- cache ------------------- */
 
-const arena = document.getElementById('gameScreen');
-const context = canvas.getContext('2d');
-
+const canvas = document.getElementById('gameScreen');
+const ctx = canvas.getContext('2d');
+window.addEventListener('resize', resizeCanvas);
 /* ------------------- functions ------------------- */
-
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
 
 /* ------------------- event listeners ------------------- */
