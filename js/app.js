@@ -67,7 +67,7 @@ function resizeCanvas() {
 }
 
 // draw platform
-function drawPlatform() {
+function drawScreen() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = 'brown';
@@ -76,10 +76,10 @@ function drawPlatform() {
     player1.draw();
     player2.draw();
 
-    requestAnimationFrame(drawPlatform);
+    requestAnimationFrame(drawScreen);
 };
 
-drawPlatform();
+drawScreen();
 
 /* ------------------- event listeners ------------------- */
 

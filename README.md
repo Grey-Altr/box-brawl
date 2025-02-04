@@ -56,7 +56,7 @@ By the end of the week, the project will deliver a fully functional, two-player 
         - A health value
         - A marker to check the character is on the platform
     - Define methods for "character" to:
-        - Draw on screen
+        ~~- Draw on screen~~
         - Track movement based on player input, knockback and gravity
         - Attacking the opponent applies knockback
         - Attacking the opponent applies damage (reduces health)
