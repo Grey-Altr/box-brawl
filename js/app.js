@@ -21,8 +21,10 @@ const ctx = canvas.getContext('2d');
 canvas.width = 800;
 canvas.height = 500;
 
-// gravity
-const gravity = 0;
+// gravity and movement
+const gravity = 5;
+const playerSpeed = 5;
+const jumpSpeed = 5;
 
 // platform object
 const platform = {
@@ -98,6 +100,17 @@ drawScreen();
 window.addEventListener('resize', resizeCanvas);
 
 // movement controls
-window.addEventListener('keydown', () => {
-
+window.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case 'a':
+            player1.velocityX = -playerSpeed;
+            break;
+        case 'd':
+            player1.velocityX = 
+            playerSpeed;
+            break;
+        case 'w':
+            player1.velocityY = jumpSpeed;
+            break;
+    }
 });
