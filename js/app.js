@@ -32,27 +32,32 @@ const platform = {
     height: 20
 };
 
+
 /* ------------------- variables ------------------- */
 
 /* -------------------  classes  ------------------- */
 
-// class character {
-//     constructor(x, y, color) {
-//         this.x = x;
-//         this.y = y;
-//         this.width = 0;
-//         this.height = 0;
-//         this.color = color;
-//         this.velocityX = 0;
-//         this.velocityY = 0;
-//         this.grounded = false;
-//         this.isAttacking = false;
-//     }
-//}
+class character {
+    constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.width = 50;
+        this.height = 50;
+        this.color = color;
+        this.velocityX = 0;
+        this.velocityY = 0;
+        this.grounded = false;
+        this.isAttacking = false;
+    }
+    
+    draw() {
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+    
+}
 
-
-
-
+const player1 = new character(200, 350, 'white');
 
 
 /* ------------------- functions ------------------- */
@@ -67,6 +72,8 @@ function drawPlatform() {
 
     ctx.fillStyle = 'brown';
     ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
+
+    player1.draw();
 
     requestAnimationFrame(drawPlatform);
 };
