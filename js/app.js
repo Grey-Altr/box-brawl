@@ -1,6 +1,7 @@
 /* Notes 
 - Make sure screen assets resize with game screen
 - Add canvas and ctx citation in README
+- Change name of repo to adhere to project criteria
 */
 
 /* Bugs
@@ -13,13 +14,12 @@
 
 const canvas = document.getElementById('gameScreen');
 const ctx = canvas.getContext('2d');
-window.addEventListener('resize', resizeCanvas);
 
 /* ------------------- constants ------------------- */
 
 // canvas size
-//canvas.width = 100%
-//canvas.height = 100%;
+// canvas.width = 100%;
+// canvas.height = 100%;
 
 // gravity
 const gravity = 0;
@@ -63,7 +63,7 @@ function resizeCanvas() {
 
 // draw platform
 function drawPlatform() {
-ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = 'brown';
     ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
@@ -74,3 +74,5 @@ ctx.clearRect(0, 0, canvas.width, canvas.height);
 drawPlatform();
 
 /* ------------------- event listeners ------------------- */
+
+window.addEventListener("resize", resizeCanvas);
