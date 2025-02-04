@@ -18,8 +18,8 @@ const ctx = canvas.getContext('2d');
 /* ------------------- constants ------------------- */
 
 // canvas size
-// canvas.width = 100%;
-// canvas.height = 100%;
+canvas.width = 800;
+canvas.height = 500;
 
 // gravity
 const gravity = 0;
