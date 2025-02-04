@@ -22,9 +22,9 @@ canvas.width = 800;
 canvas.height = 500;
 
 // gravity and movement
-const gravity = 5;
+const gravity = 1;
 const playerSpeed = 5;
-const jumpSpeed = 5;
+const jumpSpeed = -15;
 
 // platform object
 const platform = {
@@ -61,6 +61,7 @@ class character {
         // gravity
         this.velocityY += gravity;
         this.y += this.velocityY;
+        this.x += this.velocityX;
 
         //platform collision
         if (this.y + this.height >= platform.y && this.y + this.height <= platform.y + 10 && this.x + this.width > platform.x && this.x < platform.x + platform.width) {
@@ -126,4 +127,8 @@ window.addEventListener('keydown', (event) => {
             player1.velocityY = jumpSpeed;
             break;
     }
+});
+
+window.addEventListener('keyup', (event) => {
+    if (event.key === 'a' || event.key === 'd') player1.velocityX = 0;
 });
