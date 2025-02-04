@@ -50,9 +50,9 @@ By the end of the week, the project will deliver a fully functional, two-player 
     - ~~Define class named "character" for player objects~~
     (DRFI: [MDN: Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes))
     - Define stats for "character":
-        - A screen position (x, y)
+        ~~- A screen position (x, y)~~
         - A movement velocity (velocityX, velocityY)
-        - A size (width, height)
+        ~~- A size (width, height)~~
         - A health value
         - A marker to check the character is on the platform
     - Define methods for "character" to:
@@ -61,9 +61,9 @@ By the end of the week, the project will deliver a fully functional, two-player 
         - Attacking the opponent applies knockback
         - Attacking the opponent applies damage (reduces health)
 1. ***Player Setup:***
-    - Create two players with "character" class
-    - Assign colors to define characters 1 and 2
-    - Assign initial position for each character on platform at game start
+    ~~- Create two players with "character" class~~
+    ~~- Assign colors to define characters 1 and 2~~
+    - ~~Assign initial position for each character on platform at game start~~
 1. ***Health Setup:***
     - Create health bars for each player (js or css?)
     - Assign each character's a health bar

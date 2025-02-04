@@ -60,7 +60,18 @@ class character {
 const player1 = new character(200, 350, 'white');
 const player2 = new character(550, 350, 'red');
 
+const keys = {
+    a: false,
+    d: false,
+    w: false,
+    ArrowLeft: false,
+    ArrowRight: false,
+    ArrowUp: false
+};
+
 /* ------------------- functions ------------------- */
+
+// resize canvas
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -83,4 +94,10 @@ drawScreen();
 
 /* ------------------- event listeners ------------------- */
 
-window.addEventListener("resize", resizeCanvas);
+// resize screen
+window.addEventListener('resize', resizeCanvas);
+
+// movement controls
+window.addEventListener('keydown', () => {
+
+});
