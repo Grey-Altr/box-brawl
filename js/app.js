@@ -58,7 +58,7 @@ class character {
 }
 
 const player1 = new character(200, 350, 'white');
-
+const player2 = new character(550, 350, 'red');
 
 /* ------------------- functions ------------------- */
 function resizeCanvas() {
@@ -74,6 +74,7 @@ function drawPlatform() {
     ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
 
     player1.draw();
+    player2.draw();
 
     requestAnimationFrame(drawPlatform);
 };
