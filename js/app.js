@@ -1,3 +1,14 @@
+/* Notes 
+- Make sure screen assets resize with game screen
+*/
+
+/* Bugs
+
+*/
+
+
+
+
 /* ------------------- constants ------------------- */
 
 // canvas size
