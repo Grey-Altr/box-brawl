@@ -5,7 +5,7 @@
 */
 
 /* Bugs
-
+- players fall through platform if double-jump not timed properly
 */
 
 

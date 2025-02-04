@@ -51,7 +51,7 @@ By the end of the week, the project will deliver a fully functional, two-player 
     (DRFI: [MDN: Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes))
     - Define stats for "character":
         ~~- A screen position (x, y)~~
-        - A movement velocity (velocityX, velocityY)
+        ~~- A movement velocity (velocityX, velocityY)~~
         ~~- A size (width, height)~~
         - A health value
         - A marker to check the character is on the platform
@@ -70,19 +70,19 @@ By the end of the week, the project will deliver a fully functional, two-player 
     - Update health bars upon damage taken
 1. ***Movement Setup:***
     - Define eventLister for player control:
-        - Move left or right
-        - Jump if player is on platform, and double-jump if in the air
-        - Stop movement when key is released
+        ~~- Move left or right~~
+        ~~- Jump if player is on platform, and double-jump if in the air~~
+        ~~- Stop movement when key is released~~
 1. ***Damage and Knockback Setup:***
     - Upon player hit:
         - Reduce health
         - Knock player away from opponent
     - When player health reaches zero, call winner and end game
 1. ***Game Loop***
-    - Clear canvas and redraw for animation
-    - Draw platform
-    - Initialize player positions
-    - Update player positions based on gameplay
+    ~~- Clear canvas and redraw for animation~~
+    ~~- Draw platform~~
+    ~~- Initialize player positions~~
+    ~~- Update player positions based on gameplay~~
     - Register collisions between players, and players and platform
     - Update health bars based on damage taken
     - Continuously run loop at appropriate framerate
