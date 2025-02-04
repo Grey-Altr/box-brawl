@@ -61,6 +61,13 @@ class character {
         // gravity
         this.velocityY += gravity;
         this.y += this.velocityY;
+
+        //platform collision
+        if (this.y + this.height >= platform.y && this.y + this.height <= platform.y + 10 && this.x + this.width > platform.x && this.x < platform.x + platform.width) {
+            this.y = platform.y - this.height;
+            this.velocityY = 0;
+            this.grounded = true;
+        }
     }
 }
 
