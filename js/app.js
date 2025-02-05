@@ -5,10 +5,10 @@
 
 */
 
-/* Bugs
-- players fall through platform if double-jump not timed properly
+/*  Current bugs (XX--XX = squashed)
+- XXplayers fall through platform if double-jump not timed properlyXX (now a feature not a bug)
 - hit detection only works on right side of each character
-- hit causes opponent to slide off platform
+- XXhit causes opponent to slide off platformXX
 */
 
 
@@ -94,10 +94,17 @@ class character {
         if (!this.isAttacking) {
             this.isAttacking = true;
         setTimeout(() => (this.isAttacking = false), 200);
+        
+        const attackRange = 1;
+        const attackX = this.velocityX >= 0 ? this.x + this.width : this.x - attackRange;
 
-        const attackX = this.x + (this.width * (this.velocityX >= 0 ? 1 : -1));
-        if (attackX < opponent.x + opponent.width && attackX + 20 > opponent.x && this.y < opponent.y + opponent.height && this.y + this.height + this.height > opponent.y) {
-            opponent.takeDamage();
+        if (
+            attackX < opponent.x + opponent.width &&
+            attackX + attackRange > opponent.x &&
+            this.y < opponent.y + opponent.height &&
+            this.y + this.height > opponent.y
+            ) {
+                opponent.takeDamage();
             }
         }
     }
@@ -112,8 +119,8 @@ class character {
     }
 
     knockback() {
-        this.velocityX < this.velocityX >= 0 ? -8 : 8;
-        this.velocityY = -10;
+        this.velocityX = this.x < platform.x + platform.width / 0 ? -8 : 8;
+        this.velocityY = -7;
     }
 }
 
