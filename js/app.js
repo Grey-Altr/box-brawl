@@ -72,10 +72,17 @@ class character {
         }
 
     }
-    
-    attack() {
-        this.isAttacking = true;
+
+    attack(opponent) {
+        if (!this.isAttacking) {
+            this.isAttacking = true;
         setTimeout(() => (this.isAttacking = false), 200);
+
+        const attackX = this.x + (this.width * (this.velocityX >= 0 ? 1 : -1));
+        if (attackX < opponent.x + opponent.width && attackX + 20 > opponent.x && this.y < opponent.y + opponent.height && this.y + this.height + this.height > opponent.y) {
+            opponent.takeDamage();
+        }
+        }
     }
 }
 
