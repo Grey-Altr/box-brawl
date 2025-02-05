@@ -86,8 +86,9 @@ class character {
             this.y = platform.y - this.height;
             this.velocityY = 0;
             this.grounded = true;
+        } else {
+            this.grounded = false;
         }
-
     }
 
     attack(opponent) {
@@ -151,7 +152,7 @@ function resizeCanvas() {
 }
 
 // draw platform
-function drawScreen() {
+function gameLoop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = 'brown';
@@ -166,7 +167,7 @@ function drawScreen() {
 };
 
 
-drawScreen();
+gameLoop();
 
 /* ------------------- event listeners ------------------- */
 
