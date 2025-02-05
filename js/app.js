@@ -2,6 +2,7 @@
 - Make sure screen assets resize with game screen
 - Add canvas and ctx citation in README
 - Change name of repo to adhere to project criteria
+
 */
 
 /* Bugs
@@ -69,6 +70,12 @@ class character {
             this.velocityY = 0;
             this.grounded = true;
         }
+
+    }
+    
+    attack() {
+        this.isAttacking = true;
+        setTimeout(() => (this.isAttacking = false), 200);
     }
 }
 
@@ -126,6 +133,9 @@ window.addEventListener('keydown', (event) => {
             break;
         case 'w':
             player1.velocityY = jumpSpeed;
+            break;
+        case ' ':
+            player1.attack();
             break;
         case 'ArrowLeft':
             player2.velocityX = -playerSpeed;
