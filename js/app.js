@@ -163,7 +163,7 @@ function gameLoop() {
     player1.draw();
     player2.draw();
 
-    requestAnimationFrame(drawScreen);
+    requestAnimationFrame(gameLoop);
 };
 
 
