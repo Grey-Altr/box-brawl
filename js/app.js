@@ -40,6 +40,19 @@ const platform = {
 
 /* ------------------- variables ------------------- */
 
+const p1HealthBar = document.createElement('div');
+const p2HealthBar = document.createElement('div');
+
+const healthContainer = document.createElement('div');
+healthContainer.classList.add('health-container');
+
+p1HealthBar.classList.add('health-bar');
+p2HealthBar.classList.add('health-bar');
+
+healthContainer.appendChild(p1HealthBar);
+healthContainer.appendChild(p2HealthBar);
+document.body.insertBefore(healthContainer, canvas);
+
 /* -------------------  classes  ------------------- */
 
 class character {
@@ -84,7 +97,7 @@ class character {
         const attackX = this.x + (this.width * (this.velocityX >= 0 ? 1 : -1));
         if (attackX < opponent.x + opponent.width && attackX + 20 > opponent.x && this.y < opponent.y + opponent.height && this.y + this.height + this.height > opponent.y) {
             opponent.takeDamage();
-        }
+            }
         }
     }
 
