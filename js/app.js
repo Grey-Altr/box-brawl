@@ -66,6 +66,7 @@ class character {
         this.velocityY = 0;
         this.grounded = false;
         this.isAttacking = false;
+        this.health = 100;
     }
     
     draw() {
@@ -102,6 +103,7 @@ class character {
     }
 
     takeDamage() {
+        this.health = 100;
         this.knockback();
     }
 
@@ -144,6 +146,9 @@ function drawScreen() {
     player1.draw();
     player2.draw();
 
+    p1HealthBar.style.width = `${player1.health * 3}px`;
+    p2HealthBar.style.width = `${player2.health * 3}px`;
+    
     requestAnimationFrame(drawScreen);
 };
 
