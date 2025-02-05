@@ -103,14 +103,23 @@ class character {
     }
 
     takeDamage() {
-        this.health = 100;
+        this.health -= 10;
+        if (this.health <= 0) {
+            this.health = 0;
+        }
         this.knockback();
+        updateHealthBars();
     }
 
     knockback() {
-        this.velocityX = this.velocityX >= 0 ? -5 : 5;
-        this.velocityY = -5;
+        this.velocityX < this.velocityX >= 0 ? -8 : 8;
+        this.velocityY = -10;
     }
+}
+
+function updateHealthBars() {
+  p1HealthBar.style.width = `${player1.health * 3}px`;
+  p2HealthBar.style.width = `${player2.health * 3}px`;
 }
 
 
@@ -146,11 +155,9 @@ function drawScreen() {
     player1.draw();
     player2.draw();
 
-    p1HealthBar.style.width = `${player1.health * 3}px`;
-    p2HealthBar.style.width = `${player2.health * 3}px`;
-    
     requestAnimationFrame(drawScreen);
 };
+
 
 drawScreen();
 
