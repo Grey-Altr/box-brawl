@@ -98,7 +98,7 @@ class character {
             this.isAttacking = true;
         setTimeout(() => (this.isAttacking = false), 200);
         
-        const attackRange = 1;
+        const attackRange = 30;
         const attackX = this.x + (this.faceDirection * attackRange);
 
         if (
@@ -129,6 +129,9 @@ class character {
             this.velocityX = knockbackForce;
         } else {
             this.velocityX = -knockbackForce;
+
+            this.velocityX = attacker.faceDirection * knockbackForce;
+            this.velocityY = attacker.upwardForce;
         }
 
         this.velocityY = upwardForce;
