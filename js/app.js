@@ -8,6 +8,7 @@
 /* Bugs
 - players fall through platform if double-jump not timed properly
 - hit detection only works on right side of each character
+- hit causes opponent to slide off platform
 */
 
 
