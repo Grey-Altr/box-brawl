@@ -67,6 +67,7 @@ class character {
         this.grounded = false;
         this.isAttacking = false;
         this.health = 100;
+        this.faceDirection = 1;
     }
     
     draw() {
@@ -98,7 +99,7 @@ class character {
         setTimeout(() => (this.isAttacking = false), 200);
         
         const attackRange = 1;
-        const attackX = this.velocityX >= 0 ? this.x + this.width : this.x - attackRange;
+        const attackX = this.x + (this.faceDirection * attackRange);
 
         if (
             attackX < opponent.x + opponent.width &&
@@ -188,10 +189,12 @@ window.addEventListener('keydown', (event) => {
     switch (event.key) {
         case 'a':
             player1.velocityX = -playerSpeed;
+            player1.faceDirection = -1;
             break;
         case 'd':
             player1.velocityX = 
             playerSpeed;
+            player1.faceDirection = 1;
             break;
         case 'w':
             player1.velocityY = jumpSpeed;
@@ -201,9 +204,11 @@ window.addEventListener('keydown', (event) => {
             break;
         case 'ArrowLeft':
             player2.velocityX = -playerSpeed;
+            player2.faceDirection = -1;
             break;
         case 'ArrowRight':
             player2.velocityX = playerSpeed;
+            player2.faceDirection = 1;
             break;
         case 'ArrowUp':
             player2.velocityY = jumpSpeed;
