@@ -81,14 +81,15 @@ class character {
         this.x += this.velocityX;
         this.grounded = false;
 
+        // ground-friction simulation
+        this.velocityX *= 0.9;
+
         //platform collision
         if (this.y + this.height >= platform.y && this.y + this.height <= platform.y + 10 && this.x + this.width > platform.x && this.x < platform.x + platform.width) {
             this.y = platform.y - this.height;
             this.velocityY = 0;
             this.grounded = true;
-        } else {
-            this.grounded = false;
-        }
+        } 
     }
 
     attack(opponent) {
@@ -105,23 +106,31 @@ class character {
             this.y < opponent.y + opponent.height &&
             this.y + this.height > opponent.y
             ) {
-                opponent.takeDamage();
+                opponent.takeDamage(this);
             }
         }
     }
 
-    takeDamage() {
+    takeDamage(attacker) {
         this.health -= 10;
         if (this.health <= 0) {
             this.health = 0;
         }
-        this.knockback();
+        this.knockback(attacker);
         updateHealthBars();
     }
 
-    knockback() {
-        this.velocityX = this.x < platform.x + platform.width / 0 ? -8 : 8;
-        this.velocityY = -7;
+    knockback(attacker) {
+        const knockbackForce = 8;
+        const upwardForce = -7;
+
+        if (attacker.x < this.x) {
+            this.velocityX = knockbackForce;
+        } else {
+            this.velocityX = -knockbackForce;
+        }
+
+        this.velocityY = upwardForce;
     }
 }
 
