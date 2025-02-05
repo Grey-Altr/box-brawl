@@ -7,7 +7,7 @@
 
 /*  Current bugs (XX--XX = squashed)
 - XXplayers fall through platform if double-jump not timed properlyXX (now a feature not a bug)
-- hit detection only works on right side of each character
+- XXhit detection only works on right side of each characterXX
 - XXhit causes opponent to slide off platformXX
 */
 
@@ -75,7 +75,7 @@ class character {
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
     
-    update() {
+    update(opponent) {
         // gravity
         this.velocityY += gravity;
         this.y += this.velocityY;
@@ -91,6 +91,25 @@ class character {
             this.velocityY = 0;
             this.grounded = true;
         } 
+
+        // player collision
+        if (this.playerCollision(opponent)) {
+            if (this.velocityX > 0) {
+                this.x = opponent.x - this.width;
+            } else if (this.velocityX < 0) {
+                this.x = opponent.x + opponent.width;
+            }
+            this.velocityX = 0;
+        }
+    }
+
+    playerCollision(opponent) {
+        return (
+            this.x < opponent.x + opponent.width &&
+            this.x + this.width > opponent.x &&
+            this.y < opponent.y + opponent.height &&
+            this.y + this.height > opponent.y
+        )
     }
 
     attack(opponent) {
@@ -125,15 +144,7 @@ class character {
         const knockbackForce = 8;
         const upwardForce = -7;
 
-        if (attacker.x < this.x) {
-            this.velocityX = knockbackForce;
-        } else {
-            this.velocityX = -knockbackForce;
-
-            this.velocityX = attacker.faceDirection * knockbackForce;
-            this.velocityY = attacker.upwardForce;
-        }
-
+        this.velocityX = attacker.faceDirection * knockbackForce;
         this.velocityY = upwardForce;
     }
 }
@@ -171,8 +182,8 @@ function gameLoop() {
     ctx.fillStyle = 'brown';
     ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
 
-    player1.update();
-    player2.update();
+    player1.update(player2);
+    player2.update(player1);
     player1.draw();
     player2.draw();
 
