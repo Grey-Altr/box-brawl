@@ -7,6 +7,7 @@
 
 /* Bugs
 - players fall through platform if double-jump not timed properly
+- hit detection only works on right side of each character
 */
 
 
@@ -63,6 +64,7 @@ class character {
         this.velocityY += gravity;
         this.y += this.velocityY;
         this.x += this.velocityX;
+        this.grounded = false;
 
         //platform collision
         if (this.y + this.height >= platform.y && this.y + this.height <= platform.y + 10 && this.x + this.width > platform.x && this.x < platform.x + platform.width) {
@@ -84,7 +86,17 @@ class character {
         }
         }
     }
+
+    takeDamage() {
+        this.knockback();
+    }
+
+    knockback() {
+        this.velocityX = this.velocityX >= 0 ? -5 : 5;
+        this.velocityY = -5;
+    }
 }
+
 
 const player1 = new character(200, 350, 'white');
 const player2 = new character(550, 350, 'red');
@@ -142,7 +154,7 @@ window.addEventListener('keydown', (event) => {
             player1.velocityY = jumpSpeed;
             break;
         case ' ':
-            player1.attack();
+            player1.attack(player2);
             break;
         case 'ArrowLeft':
             player2.velocityX = -playerSpeed;
@@ -152,6 +164,9 @@ window.addEventListener('keydown', (event) => {
             break;
         case 'ArrowUp':
             player2.velocityY = jumpSpeed;
+            break;
+        case 'Enter':
+            player2.attack(player1);
             break;
     }
 });
