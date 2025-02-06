@@ -2,13 +2,21 @@
 - Make sure screen assets resize with game screen
 - Add canvas and ctx citation in README
 - Change name of repo to adhere to project criteria
-
+- template literal declaring winner on game over screen
+- add styling to game over screen
+- create reset button on game over screen
 */
 
 /*  Current bugs (XX--XX = squashed)
 - XXplayers fall through platform if double-jump not timed properlyXX (now a feature not a bug)
 - XXhit detection only works on right side of each characterXX
 - XXhit causes opponent to slide off platformXX
+- console.log gameOver is constant in browser console, not just in game-over state
+- gameOver state not passing to endGame()
+- takeDamage() not behaving as expected
+- infinite jump doesn't enhance gameplay if player can't jump over opponent
+- health bar is sometimes delayed when damage is taken
+- 
 */
 
 
@@ -38,7 +46,7 @@ const platform = {
 };
 
 
-/* ------------------- variables ------------------- */
+/* ------------------- create elements ------------------- */
 
 const p1HealthBar = document.createElement('div');
 const p2HealthBar = document.createElement('div');
@@ -52,6 +60,10 @@ p2HealthBar.classList.add('health-bar');
 healthContainer.appendChild(p1HealthBar);
 healthContainer.appendChild(p2HealthBar);
 document.body.insertBefore(healthContainer, canvas);
+
+const gameOverText = document.createElement('div');
+gameOverText.innerHTML = 'Game Over';
+document.body.appendChild(gameOverText);
 
 /* -------------------  classes  ------------------- */
 
@@ -135,9 +147,9 @@ class character {
         this.health -= 10;
         if (this.health <= 0) {
             this.health = 0;
+            endGame(attacker);
         }
         this.knockback(attacker);
-        updateHealthBars();
     }
 
     knockback(attacker) {
@@ -187,11 +199,13 @@ function gameLoop() {
     player1.draw();
     player2.draw();
 
+    updateHealthBars();
+
     requestAnimationFrame(gameLoop);
 };
 
 function endGame(winner) {
-
+    let loser = winner === player1 ? player2 : player1;
 };
 
 
