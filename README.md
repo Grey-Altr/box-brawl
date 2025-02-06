@@ -94,12 +94,11 @@ By the end of the week, the project will deliver a fully functional, two-player 
 # Project Requirements
 ## Technical Requirements - MVP
 
-- [ ] Render the game in the browser using the DOM manipulation techniques
+- [x] Render the game in the browser using the DOM manipulation techniques
 demonstrated in lecture.
 
-- [ ] Include win/loss logic and render win/loss messages in HTML. The game you chose.
+- [ ] Include win/loss logic and render win/loss messages in HTML. The game you chose. The game you chose must have a win/lose condition.
 
-must have a win/lose condition.
 - [ ] Include separate HTML, CSS, JavaScript, and JavaScript data files organized in an
 appropriate file structure.
 
@@ -126,7 +125,7 @@ a commented out Code Graveyard section of your code.
 
 ## UX/UI Requirements
 
-- [ ] CSS Flexbox or Grid is used for page layout design.
+- [x] CSS Flexbox or Grid is used for page layout design.
 
 - [ ] Instructions about how to play the game are included in your app.
 
@@ -139,16 +138,16 @@ standard.
 
 ## Git and GitHub Requirements
 
-- [ ] You are shown as the only contributor to the project on GitHub.
+- [x] You are shown as the only contributor to the project on GitHub.
 
 - [ ] The GitHub repository used for the project is named appropriately. For example,
 names like connect-four or adventure-game are appropriate names, whereas
 game-project or ga-project are not. The repo must be publicly accessible.
 
-- [ ] Frequent commits dating back to the very beginning of the project. If you start over
+- [x] Frequent commits dating back to the very beginning of the project. If you start over
 with a new repo, do not delete the old one.
 
-- [ ] Commit messages should be descriptive of the work done in the commit.
+- [x] Commit messages should be descriptive of the work done in the commit.
 
 ## README Requirements
 

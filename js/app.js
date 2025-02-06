@@ -190,6 +190,10 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 };
 
+function endGame(winner) {
+
+};
+
 
 gameLoop();
 
