@@ -62,6 +62,7 @@ healthContainer.appendChild(p2HealthBar);
 document.body.insertBefore(healthContainer, canvas);
 
 const gameOverText = document.createElement('div');
+gameOverText.id = 'game-over-screen';
 gameOverText.innerHTML = 'Game Over';
 document.body.appendChild(gameOverText);
 
