@@ -16,7 +16,7 @@
 - takeDamage() not behaving as expected
 - infinite jump doesn't enhance gameplay if player can't jump over opponent
 - XXhealth bar is sometimes delayed when damage is takenXX
-- 
+- players keep moving after game over
 */
 
 
@@ -63,7 +63,7 @@ document.body.insertBefore(healthContainer, canvas);
 
 const gameOverText = document.createElement('div');
 gameOverText.id = 'game-over-screen';
-gameOverText.innerHTML = 'Game Over';
+// gameOverText.innerHTML = 'Game Over';
 gameOverText.style.display = 'none';
 document.body.appendChild(gameOverText);
 
@@ -210,6 +210,7 @@ function endGame(winner) {
     let loser = winner === player1 ? player2 : player1;
 
     gameOverText.style.display = 'block';
+    gameOverText.innerHTML = `<h2>${winner.color.toUpperCase()} WINS!</h2>`;
 };
 
 
