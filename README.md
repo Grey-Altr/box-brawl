@@ -83,11 +83,11 @@ By the end of the week, the project will deliver a fully functional, two-player 
     - ~~Draw platform~~
     - ~~Initialize player positions~~
     - ~~Update player positions based on gameplay~~
-    - Register collisions between players, and players and platform
-    - Update health bars based on damage taken
-    - Continuously run loop at appropriate framerate
+    - ~~Register collisions between players, and players and platform~~
+    - ~~Update health bars based on damage taken~~
+    - ~~Continuously run loop at appropriate framerate~~
     - Call game function:
-        - Starts game and animation
-        - Initialize all systems for gameplay
+        - ~~Starts game and animation~~
+        - ~~Initialize all systems for gameplay~~
 
 
