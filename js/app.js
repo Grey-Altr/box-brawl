@@ -206,7 +206,7 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 };
 
-function endGame(winner, gameOverText) {
+function endGame(winner) {
     let loser = winner === player1 ? player2 : player1;
 
     gameOverText.style.display = 'block';
