@@ -208,6 +208,8 @@ function gameLoop() {
 
 function endGame(winner, gameOverText) {
     let loser = winner === player1 ? player2 : player1;
+
+    gameOverText.style.display = 'block';
 };
 
 
