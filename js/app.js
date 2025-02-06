@@ -15,7 +15,7 @@
 - gameOver state not passing to endGame()
 - takeDamage() not behaving as expected
 - infinite jump doesn't enhance gameplay if player can't jump over opponent
-- health bar is sometimes delayed when damage is taken
+- XXhealth bar is sometimes delayed when damage is takenXX
 - 
 */
 
@@ -64,6 +64,7 @@ document.body.insertBefore(healthContainer, canvas);
 const gameOverText = document.createElement('div');
 gameOverText.id = 'game-over-screen';
 gameOverText.innerHTML = 'Game Over';
+gameOverText.style.display = 'none';
 document.body.appendChild(gameOverText);
 
 /* -------------------  classes  ------------------- */
@@ -205,7 +206,7 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 };
 
-function endGame(winner) {
+function endGame(winner, gameOverText) {
     let loser = winner === player1 ? player2 : player1;
 };
 
