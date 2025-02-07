@@ -18,6 +18,7 @@
 - XXinfinite jump doesn't enhance gameplay if player can't jump over opponentXX
 - XXhealth bar is sometimes delayed when damage is takenXX
 - XXplayers keep moving after game overXX
+- jump over opponent and double-jump features failing
 */
 
 
@@ -81,6 +82,7 @@ class character {
         this.isAttacking = false;
         this.health = 100;
         this.faceDirection = 1;
+        this.jumpsLeft = 2;
     }
     
     draw() {
@@ -108,6 +110,7 @@ class character {
                 this.y = platform.y - this.height;
                 this.velocityY = 0;
                 this.grounded = true;
+                this.jumpsLeft = 2;
             } else {
                 this.grounded = false;
         }
