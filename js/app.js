@@ -18,7 +18,7 @@
 - XXinfinite jump doesn't enhance gameplay if player can't jump over opponentXX
 - XXhealth bar is sometimes delayed when damage is takenXX
 - XXplayers keep moving after game overXX
-- jump over opponent and double-jump features failing
+- jump over opponent feature failing
 */
 
 
@@ -245,9 +245,9 @@ function handleKeyDown(event) {
         player1.faceDirection = 1;
         break;
       case "w":
-        if (player1.grounded) {
+        if (player1.jumpsLeft > 0) {
             player1.velocityY = jumpSpeed;
-            player1.grounded = false;
+            player1.jumpsLeft--;
         }
         break;
       case " ":
@@ -262,9 +262,9 @@ function handleKeyDown(event) {
         player2.faceDirection = 1;
         break;
       case "ArrowUp":
-        if (player2.grounded) {
+        if (player2.jumpsLeft > 0) {
           player2.velocityY = jumpSpeed;
-          player2.grounded = false;
+          player2.jumpsLeft--;
         }
         break;
       case "Enter":
