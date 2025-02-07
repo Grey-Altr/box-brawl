@@ -21,9 +21,9 @@ canvas {
 }
 
 .health-container {
+    position: absolute;
     display: flex;
     justify-content: space-between;
-    position: absolute;
     margin-bottom: 500px;
     left: 50%;
     transform: translateX(-50%);
@@ -44,4 +44,13 @@ canvas {
     font-size: 60px;
     text-align: center;
     display: none;
+}
+
+#restart-button {
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
