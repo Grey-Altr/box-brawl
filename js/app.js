@@ -272,41 +272,5 @@ gameLoop();
 window.addEventListener('resize', resizeCanvas);
 
 // movement controls
-window.addEventListener('keydown', (event) => {
-    switch (event.key) {
-        case 'a':
-            player1.velocityX = -playerSpeed;
-            player1.faceDirection = -1;
-            break;
-        case 'd':
-            player1.velocityX = 
-            playerSpeed;
-            player1.faceDirection = 1;
-            break;
-        case 'w':
-            player1.velocityY = jumpSpeed;
-            break;
-        case ' ':
-            player1.attack(player2);
-            break;
-        case 'ArrowLeft':
-            player2.velocityX = -playerSpeed;
-            player2.faceDirection = -1;
-            break;
-        case 'ArrowRight':
-            player2.velocityX = playerSpeed;
-            player2.faceDirection = 1;
-            break;
-        case 'ArrowUp':
-            player2.velocityY = jumpSpeed;
-            break;
-        case 'Enter':
-            player2.attack(player1);
-            break;
-    }
-});
-
-window.addEventListener('keyup', (event) => {
-    if (event.key === 'a' || event.key === 'd') player1.velocityX = 0;
-    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') player2.velocityX = 0;
-});
+window.addEventListener('keydown', handleKeyDown);
+window.addEventListener('keyup', handleKeyUp);
