@@ -39,7 +39,9 @@ canvas {
 }
 
 #game-over-screen {
+    position: absolute;
     color: white;
     font-size: 60px;
     text-align: center;
+    display: none;
 }

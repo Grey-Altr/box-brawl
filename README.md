@@ -74,10 +74,10 @@ By the end of the week, the project will deliver a fully functional, two-player 
         - ~~Jump if player is on platform, and double-jump if in the air~~
         - ~~Stop movement when key is released~~
 1. ***Damage and Knockback Setup:***
-    - Upon player hit:
+    - ~~Upon player hit:~~
         - ~~Reduce health~~
         - ~~Knock player away from opponent~~
-        - When player health reaches zero, call winner and end game
+        - ~~When player health reaches zero, call winner and end game~~
 1. ***Game Loop***
     - ~~Clear canvas and redraw for animation~~
     - ~~Draw platform~~
@@ -86,7 +86,7 @@ By the end of the week, the project will deliver a fully functional, two-player 
     - ~~Register collisions between players, and players and platform~~
     - ~~Update health bars based on damage taken~~
     - ~~Continuously run loop at appropriate framerate~~
-    - Call game function:
+    - ~~Call game function:~~
         - ~~Starts game and animation~~
         - ~~Initialize all systems for gameplay~~
 
@@ -97,7 +97,7 @@ By the end of the week, the project will deliver a fully functional, two-player 
 - [x] Render the game in the browser using the DOM manipulation techniques
 demonstrated in lecture.
 
-- [ ] Include win/loss logic and render win/loss messages in HTML. The game you chose. The game you chose must have a win/lose condition.
+- [x] Include win/loss logic and render win/loss messages in HTML. The game you chose. The game you chose must have a win/lose condition.
 
 - [ ] Include separate HTML, CSS, JavaScript, and JavaScript data files organized in an
 appropriate file structure.

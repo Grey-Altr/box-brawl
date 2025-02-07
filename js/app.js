@@ -11,9 +11,9 @@
 - XXplayers fall through platform if double-jump not timed properlyXX (now a feature not a bug)
 - XXhit detection only works on right side of each characterXX
 - XXhit causes opponent to slide off platformXX
-- console.log gameOver is constant in browser console, not just in game-over state
-- gameOver state not passing to endGame()
-- takeDamage() not behaving as expected
+- XXconsole.log gameOver is constant in browser console, not just in game-over stateXX
+- XXgameOver state not passing to endGame()XX
+- XXtakeDamage() not behaving as expectedXX
 - infinite jump doesn't enhance gameplay if player can't jump over opponent
 - XXhealth bar is sometimes delayed when damage is takenXX
 - players keep moving after game over
@@ -63,8 +63,6 @@ document.body.insertBefore(healthContainer, canvas);
 
 const gameOverText = document.createElement('div');
 gameOverText.id = 'game-over-screen';
-// gameOverText.innerHTML = 'Game Over';
-gameOverText.style.display = 'none';
 document.body.appendChild(gameOverText);
 
 /* -------------------  classes  ------------------- */
@@ -104,7 +102,9 @@ class character {
             this.y = platform.y - this.height;
             this.velocityY = 0;
             this.grounded = true;
-        } 
+        } else {
+            this.grounded = false;
+        }
 
         // player collision
         if (this.playerCollision(opponent)) {
@@ -129,7 +129,7 @@ class character {
     attack(opponent) {
         if (!this.isAttacking) {
             this.isAttacking = true;
-        setTimeout(() => (this.isAttacking = false), 200);
+        setTimeout(() => (this.isAttacking = false), 500);
         
         const attackRange = 30;
         const attackX = this.x + (this.faceDirection * attackRange);
@@ -211,6 +211,15 @@ function endGame(winner) {
 
     gameOverText.style.display = 'block';
     gameOverText.innerHTML = `<h2>${winner.color.toUpperCase()} WINS!</h2>`;
+
+    const restartButton = document.createElement('button');
+    restartButton.id = 'restart-button';
+    restartButton.innerHTML = 'Restart Game';
+    document.body.appendChild(restartButton);
+
+    restartButton.addEventListener('click', () => {
+        window.location.reload();
+    });
 };
 
 
