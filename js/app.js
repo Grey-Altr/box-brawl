@@ -20,6 +20,7 @@
 - XXhealth bar is sometimes delayed when damage is takenXX
 - XXplayers keep moving after game overXX
 - jump over opponent feature failing
+- player's can't stand on each other's heads
 */
 
 
