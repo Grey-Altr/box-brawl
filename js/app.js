@@ -213,7 +213,7 @@ function endGame(winner) {
     gameOverText.innerHTML = `<h2>${winner.color.toUpperCase()} WINS!</h2>`;
 
     window.removeEventListener('keydown', handleKeyDown);
-    window.removeEventListener('keyup', keyup);
+    window.removeEventListener('keyup', handleKeyUp);
 
     const restartButton = document.createElement('button');
     restartButton.id = 'restart-button';
@@ -226,6 +226,10 @@ function endGame(winner) {
 };
 
 function handleKeyDown() {
+
+};
+
+function handleKeyUp() {
 
 };
 
