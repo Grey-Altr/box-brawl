@@ -253,7 +253,10 @@ function handleKeyDown(event) {
         player2.faceDirection = 1;
         break;
       case "ArrowUp":
-        player2.velocityY = jumpSpeed;
+        if (player2.grounded) {
+          player2.velocityY = jumpSpeed;
+          player2.grounded = false;
+        }
         break;
       case "Enter":
         player2.attack(player1);
