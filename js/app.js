@@ -2,9 +2,10 @@
 - Make sure screen assets resize with game screen
 - Add canvas and ctx citation in README
 - Change name of repo to adhere to project criteria
-- template literal declaring winner on game over screen
-- add styling to game over screen
-- create reset button on game over screen
+- XXtemplate literal declaring winner on game over screenXX
+- add more styling to game over screen
+- XXcreate reset button on game over screenXX
+- try to implement double jump and ability to jump over opponent
 */
 
 /*  Current bugs (XX--XX = squashed)
@@ -98,12 +99,17 @@ class character {
         this.velocityX *= 0.9;
 
         //platform collision
-        if (this.y + this.height >= platform.y && this.y + this.height <= platform.y + 10 && this.x + this.width > platform.x && this.x < platform.x + platform.width) {
-            this.y = platform.y - this.height;
-            this.velocityY = 0;
-            this.grounded = true;
-        } else {
-            this.grounded = false;
+        if (
+            this.y + this.height >= platform.y && 
+            this.y + this.height <= platform.y + 10 && 
+            this.x + this.width > platform.x && 
+            this.x < platform.x + platform.width
+            ) {
+                this.y = platform.y - this.height;
+                this.velocityY = 0;
+                this.grounded = true;
+            } else {
+                this.grounded = false;
         }
 
         // player collision
@@ -121,8 +127,8 @@ class character {
         return (
             this.x < opponent.x + opponent.width &&
             this.x + this.width > opponent.x &&
-            this.y < opponent.y + opponent.height &&
-            this.y + this.height > opponent.y
+            // this.y < opponent.y + opponent.height &&
+            this.y + this.height > opponent.y + 10
         )
     }
 
