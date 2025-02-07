@@ -14,9 +14,9 @@
 - XXconsole.log gameOver is constant in browser console, not just in game-over stateXX
 - XXgameOver state not passing to endGame()XX
 - XXtakeDamage() not behaving as expectedXX
-- infinite jump doesn't enhance gameplay if player can't jump over opponent
+- XXinfinite jump doesn't enhance gameplay if player can't jump over opponentXX
 - XXhealth bar is sometimes delayed when damage is takenXX
-- players keep moving after game over
+- XXplayers keep moving after game overXX
 */
 
 
@@ -236,7 +236,10 @@ function handleKeyDown(event) {
         player1.faceDirection = 1;
         break;
       case "w":
-        player1.velocityY = jumpSpeed;
+        if (player1.grounded) {
+            player1.velocityY = jumpSpeed;
+            player1.grounded = false;
+        }
         break;
       case " ":
         player1.attack(player2);
