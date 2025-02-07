@@ -7,10 +7,13 @@
 - XXcreate reset button on game over screenXX
 - try to implement double jump and ability to jump over opponent
 - falling off platform does not trigger win/loss
+- add player names above health bars
+- add on screen gameplay instructions
+- begin cleaning up code
 */
 
 /*  Current bugs (XX--XX = squashed)
-- players fall through platform if double-jump not timed properly
+- XXplayers fall through platform if double-jump not timed properlyXX
 - XXhit detection only works on right side of each characterXX
 - XXhit causes opponent to slide off platformXX
 - XXconsole.log gameOver is constant in browser console, not just in game-over stateXX
@@ -52,19 +55,46 @@ const platform = {
 
 /* ------------------- create elements ------------------- */
 
-const p1HealthBar = document.createElement('div');
-const p2HealthBar = document.createElement('div');
-
+// health container
 const healthContainer = document.createElement('div');
 healthContainer.classList.add('health-container');
+
+// containers for player stats
+const p1Container = document.createElement('div');
+const p2Container = document.createElement('div');
+
+// player name elements
+const p1Name = document.createElement('div');
+const p2Name = document.createElement('div');
+
+p1Name.classList.add('player-name');
+p2Name.classList.add('player-name');
+
+p1Name.innerHTML = 'Player 1';
+p2Name.innerHTML = 'Player 2';
+
+// player health bars
+const p1HealthBar = document.createElement('div');
+const p2HealthBar = document.createElement('div');
 
 p1HealthBar.classList.add('health-bar');
 p2HealthBar.classList.add('health-bar');
 
-healthContainer.appendChild(p1HealthBar);
-healthContainer.appendChild(p2HealthBar);
+// append player stats and health bars
+p1Container.appendChild(p1Name);
+p1Container.appendChild(p1HealthBar);
+
+p2Container.appendChild(p2Name);
+p2Container.appendChild(p2HealthBar);
+
+// append player containers to health container
+healthContainer.appendChild(p1Container);
+healthContainer.appendChild(p2Container);
+
+// health container insert before canvas
 document.body.insertBefore(healthContainer, canvas);
 
+// game over text
 const gameOverText = document.createElement('div');
 gameOverText.id = 'game-over-screen';
 document.body.appendChild(gameOverText);
@@ -196,8 +226,8 @@ const keys = {
 
 // resize canvas
 function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
 
 // draw platform

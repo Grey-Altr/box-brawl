@@ -25,9 +25,27 @@ canvas {
     display: flex;
     justify-content: space-between;
     margin-bottom: 500px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 800px;
+}
+
+.health-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.player-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 3px;
+    background-color: grey;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 .health-bar {
@@ -53,4 +71,5 @@ canvas {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transform: translate(-50%, -50%);
 }

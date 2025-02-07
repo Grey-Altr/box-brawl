@@ -99,7 +99,7 @@ demonstrated in lecture.
 
 - [x] Include win/loss logic and render win/loss messages in HTML. The game you chose. The game you chose must have a win/lose condition.
 
-- [ ] Include separate HTML, CSS, JavaScript, and JavaScript data files organized in an
+- [x] Include separate HTML, CSS, JavaScript, and JavaScript data files organized in an
 appropriate file structure.
 
 - [ ] Include all required features specific to your game as defined in the Required
