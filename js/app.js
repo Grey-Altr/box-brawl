@@ -9,7 +9,7 @@
 */
 
 /*  Current bugs (XX--XX = squashed)
-- XXplayers fall through platform if double-jump not timed properlyXX (now a feature not a bug)
+- players fall through platform if double-jump not timed properly
 - XXhit detection only works on right side of each characterXX
 - XXhit causes opponent to slide off platformXX
 - XXconsole.log gameOver is constant in browser console, not just in game-over stateXX
