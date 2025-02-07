@@ -6,6 +6,7 @@
 - add more styling to game over screen
 - XXcreate reset button on game over screenXX
 - try to implement double jump and ability to jump over opponent
+- falling off platform does not trigger win/loss
 */
 
 /*  Current bugs (XX--XX = squashed)
