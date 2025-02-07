@@ -119,7 +119,7 @@ plural names for arrays.
 - [ ] There is no remaining dead and/or commented out code or console logs outside of
 a commented out Code Graveyard section of your code.
 
-- [ ] The game may not utilize the prompt() or alert() methods.
+- [x] The game may not utilize the prompt() or alert() methods.
 
 - [ ] The game is coded using proper indentation.
 
