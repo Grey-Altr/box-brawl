@@ -80,12 +80,33 @@ const p2HealthBar = document.createElement('div');
 p1HealthBar.classList.add('health-bar');
 p2HealthBar.classList.add('health-bar');
 
+// player instructions
+const p1Instructions = document.createElement('div');
+const p2Instructions = document.createElement('div');
+
+p1Instructions.classList.add('player-instructions');
+p2Instructions.classList.add('player-instructions');
+
+p1Instructions.innerHTML = `
+    <p>Move: A / D</p>
+    <p>Jump: W</p>
+    <p>Attack: Space</p>
+`;
+
+p2Instructions.innerHTML = `
+    <p>Move: Left / Right</p>
+    <p>Jump: Up</p>
+    <p>Attack: Return</p>
+`;
+
 // append player stats and health bars
 p1Container.appendChild(p1Name);
 p1Container.appendChild(p1HealthBar);
+p1Container.appendChild(p1Instructions);
 
 p2Container.appendChild(p2Name);
 p2Container.appendChild(p2HealthBar);
+p2Container.appendChild(p2Instructions);
 
 // append player containers to health container
 healthContainer.appendChild(p1Container);
