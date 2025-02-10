@@ -214,6 +214,9 @@ class character {
 
     takeDamage(attacker) {
         this.health -= 10;
+
+        updateHealthBars();
+
         if (this.health <= 0) {
             this.health = 0;
             endGame(attacker);
