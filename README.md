@@ -1,6 +1,35 @@
-# **Project 1 - Box Brawl Game Plan**
+# **Box Brawl Game Plan**
 
 ![A screenshot of Box Brawl](./assets/Screenshot%202025-02-10%20at%206.42.42%20AM.png)
+
+### [Box Brawl](https://grey-altr.github.io/box-brawl/)
+
+**Box Brawl is a 2-player 2D Platform Brawler in which players attempt to either push each other off the game platform, or deplete each other's health.**
+
+**Instructions**:
+
+Player 1:
+* Move: A / D
+* Jump: W
+* Attack: Space
+
+Player 2:
+* Move: Left / Right
+* Jump: Up
+* Attack: Return
+
+**Attributions**:
+Technologies implemented:
+* HTML
+    * `<canvas>` - the canvas element was implemented to render the game screen to the browser.
+* CSS
+* Javascript
+
+**Next Steps**
+
+1. Expand game mechanics:
+    1. Expand player mobility such as adding the ability to jump over the opponent, and adding special moves.
+
 
 ### **Note on proposals**
 In either of the following projects, I'd like the opportunity to leverage the skills covered at GA, as well as those I had gained and utilized from my prior experience at Alchemy Code Lab, and the Creative Coding AS degree program at Portland Community College (PCC) while maintaining the scope of this project assignment. Specifically, I'd like the opportunity to utilize the `<canvas>` element to render the projects. Reference materials would include notes from GA, Alchemy, PCC, as well as online documentation. Either project will only utilize **HTML**, **CSS** and vanilla **JavaScript**.
@@ -108,7 +137,7 @@ appropriate file structure.
 Features column in the table in the Recommended games document, or as
 discussed with your instructor if doing a custom game.
 
-- [ ] The game is deployed online so the rest of the world can play it.
+- [x] The game is deployed online so the rest of the world can play it.
 
 ## Code Convention Requirements
 
@@ -153,19 +182,19 @@ with a new repo, do not delete the old one.
 
 ## README Requirements
 
-- [ ] Screenshot/Logo: A screenshot of your app or a logo.
+- [x] Screenshot/Logo: A screenshot of your app or a logo.
 
-- [ ] Your game's name: Include a description of your game and what it does.
+- [x] Your game's name: Include a description of your game and what it does.
 Background info about the game and why you chose it is a nice touch.
 
-- [ ] Getting started: Include a link to your deployed game and any instructions you
+- [x] Getting started: Include a link to your deployed game and any instructions you
 deem important. This should also contain a link to your planning materials.
 
-- [ ] Attributions: This section should include links to any external resources (such as
+- [X] Attributions: This section should include links to any external resources (such as
 libraries or assets) you used to develop your application that require attribution.
 You can exclude this section if it does not apply to your application.
 
-- [ ] Technologies Used: List of the technologies used, for example: JavaScript, HTML,
+- [x] Technologies Used: List of the technologies used, for example: JavaScript, HTML,
 CSS, etc.
 
 - [ ] Next steps: Planned future enhancements (stretch goals).
@@ -174,5 +203,5 @@ CSS, etc.
 
 - [ ] Present your project in front of the class on the scheduled presentation day.
 
-- [ ] The project you present is the project you were approved by your instructor to
+- [x] The project you present is the project you were approved by your instructor to
 build.
