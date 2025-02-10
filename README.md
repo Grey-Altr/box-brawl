@@ -1,5 +1,7 @@
 # **Project 1 - Box Brawl Game Plan**
 
+![A screenshot of Box Brawl](./assets/Screenshot%202025-02-10%20at%206.42.42%20AM.png)
+
 ### **Note on proposals**
 In either of the following projects, I'd like the opportunity to leverage the skills covered at GA, as well as those I had gained and utilized from my prior experience at Alchemy Code Lab, and the Creative Coding AS degree program at Portland Community College (PCC) while maintaining the scope of this project assignment. Specifically, I'd like the opportunity to utilize the `<canvas>` element to render the projects. Reference materials would include notes from GA, Alchemy, PCC, as well as online documentation. Either project will only utilize **HTML**, **CSS** and vanilla **JavaScript**.
 
@@ -7,7 +9,7 @@ Where used references were necessary see (DRFI):
 Documentation Reference For Implementation
 
 
-## **Proposal 1: Simple Platform Fighter**
+## **Proposal : Box Brawl**
 
 This game will be a simple 2-player fighting game, featuring two characters, a static level comprised of a single floating platform. Players attempt to knock each other off of the platform or deplete one another's health.
 
@@ -22,11 +24,11 @@ Player will be able to:
 
 ### **Project Schedule**
 
-* **Day 1** - Implement player movement (walking, jumping, falling)
-* **Day 2** - Implement combat mechanics (attacks, hit detection, knockback)
-* **Day 3** - Implement health system and health tracking
-* **Day 4** - Implement level elements (platform and background art)
-* **Day 5** - Debugging and code clean-up
+* **Day 1** - ~~Implement player movement (walking, jumping, falling)~~
+* **Day 2** - ~~Implement combat mechanics (attacks, hit detection, knockback)~~
+* **Day 3** - ~~Implement health system and health tracking~~
+* **Day 4** - ~~Implement level elements (platform and background art)~~
+* **Day 5** - ~~Debugging and code clean-up~~
 * **Day 6** - Presentation preparation
 
 ### **Outcome**
@@ -38,7 +40,7 @@ By the end of the week, the project will deliver a fully functional, two-player 
 1. Dynamic stage interaction with platform collisions.
 1. Engaging local multiplayer battles.
 
-# Implementation Plan and Pseudocode for Simple Platform Fighter
+# Implementation Plan and Pseudocode for Box Brawl
 
 1. ***Game initialization:***
     - ~~Initialize canvas element in html~~
@@ -140,7 +142,7 @@ standard.
 
 - [x] You are shown as the only contributor to the project on GitHub.
 
-- [ ] The GitHub repository used for the project is named appropriately. For example,
+- [x] The GitHub repository used for the project is named appropriately. For example,
 names like connect-four or adventure-game are appropriate names, whereas
 game-project or ga-project are not. The repo must be publicly accessible.
 
