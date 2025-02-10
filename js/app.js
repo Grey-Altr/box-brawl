@@ -183,7 +183,6 @@ class character {
         return (
             this.x < opponent.x + opponent.width &&
             this.x + this.width > opponent.x &&
-            // this.y < opponent.y + opponent.height &&
             this.y + this.height > opponent.y + 10
         )
     }

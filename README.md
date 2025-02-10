@@ -1,4 +1,4 @@
-# **Project 1 - Browser Game Plan**
+# **Project 1 - Box Brawl Game Plan**
 
 ### **Note on proposals**
 In either of the following projects, I'd like the opportunity to leverage the skills covered at GA, as well as those I had gained and utilized from my prior experience at Alchemy Code Lab, and the Creative Coding AS degree program at Portland Community College (PCC) while maintaining the scope of this project assignment. Specifically, I'd like the opportunity to utilize the `<canvas>` element to render the projects. Reference materials would include notes from GA, Alchemy, PCC, as well as online documentation. Either project will only utilize **HTML**, **CSS** and vanilla **JavaScript**.
@@ -102,7 +102,7 @@ demonstrated in lecture.
 - [x] Include separate HTML, CSS, JavaScript, and JavaScript data files organized in an
 appropriate file structure.
 
-- [ ] Include all required features specific to your game as defined in the Required
+- [x] Include all required features specific to your game as defined in the Required
 Features column in the table in the Recommended games document, or as
 discussed with your instructor if doing a custom game.
 
@@ -110,31 +110,31 @@ discussed with your instructor if doing a custom game.
 
 ## Code Convention Requirements
 
-- [ ] The game can be played without encountering errors. No errors may be present in
+- [x] The game can be played without encountering errors. No errors may be present in
 the console in the browser.
 
-- [ ] The code in the app adheres to coding conventions covered in lessons, like using
+- [x] The code in the app adheres to coding conventions covered in lessons, like using
 plural names for arrays.
 
-- [ ] There is no remaining dead and/or commented out code or console logs outside of
+- [x] There is no remaining dead and/or commented out code or console logs outside of
 a commented out Code Graveyard section of your code.
 
 - [x] The game may not utilize the prompt() or alert() methods.
 
-- [ ] The game is coded using proper indentation.
+- [x] The game is coded using proper indentation.
 
 ## UX/UI Requirements
 
 - [x] CSS Flexbox or Grid is used for page layout design.
 
-- [ ] Instructions about how to play the game are included in your app.
+- [x] Instructions about how to play the game are included in your app.
 
-- [ ] Colors used on the site have appropriate contrast that meet the WCAG 2.0 level AA
+- [x] Colors used on the site have appropriate contrast that meet the WCAG 2.0 level AA
 standard.
 
-- [ ] All images on the site have alt text.
+- [x] All images on the site have alt text.
 
-- [ ] No text is placed on top of an image in a way that makes that text inaccessible.
+- [x] No text is placed on top of an image in a way that makes that text inaccessible.
 
 ## Git and GitHub Requirements
 
