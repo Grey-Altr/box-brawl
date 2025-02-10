@@ -27,6 +27,7 @@ Technologies implemented:
 
 **Next Steps**
 
+1. Develop consistent game development code pattern
 1. Clean and dry up code
 1. Implement starting splash screen and start game button
 1. Develop game aesthetic with game art and music
