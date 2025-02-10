@@ -81,7 +81,7 @@ canvas {
 #restart-button {
     position: absolute;
     top: 60%;
-    left: 45%;
+    left: 50%;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
