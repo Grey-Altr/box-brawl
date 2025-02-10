@@ -27,6 +27,7 @@ Technologies implemented:
 
 **Next Steps**
 
+1. Clean and dry up code
 1. Implement starting splash screen and start game button
 1. Develop game aesthetic with game art and music
 1. Expand game mechanics:
@@ -200,7 +201,7 @@ You can exclude this section if it does not apply to your application.
 - [x] Technologies Used: List of the technologies used, for example: JavaScript, HTML,
 CSS, etc.
 
-- [ ] Next steps: Planned future enhancements (stretch goals).
+- [x] Next steps: Planned future enhancements (stretch goals).
 
 ## Presentation Requirements
 
