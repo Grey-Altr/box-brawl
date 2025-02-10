@@ -27,8 +27,10 @@ Technologies implemented:
 
 **Next Steps**
 
+1. Implement starting splash screen
+1. Develop game aesthetic with game art and music
 1. Expand game mechanics:
-    1. Expand player mobility such as adding the ability to jump over the opponent, and adding special moves.
+    1. Expand player mobility such as adding the ability to jump over the opponent, attack combos and special moves
 
 
 ### **Note on proposals**

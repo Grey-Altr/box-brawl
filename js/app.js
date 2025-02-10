@@ -177,6 +177,12 @@ class character {
             }
             this.velocityX = 0;
         }
+
+        if (this.y > canvas.height) {
+            this.health = 0;
+            updateHealthBars();
+            endGame(opponent);
+        }
     }
 
     playerCollision(opponent) {
@@ -250,8 +256,12 @@ function resizeCanvas() {
     canvas.height = window.innerHeight;
 }
 
+let gameActive = true;
+
 // draw platform
 function gameLoop() {
+    if (!gameActive) return;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = 'brown';
@@ -268,6 +278,8 @@ function gameLoop() {
 };
 
 function endGame(winner) {
+    gameActive = false;
+
     let loser = winner === player1 ? player2 : player1;
 
     gameOverText.style.display = 'block';
