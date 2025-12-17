@@ -26,8 +26,6 @@
 - player's can't stand on each other's heads
 */
 
-
-
 /* ------------------- cache ------------------- */
 
 const canvas = document.getElementById('gameScreen');
@@ -46,12 +44,11 @@ const jumpSpeed = -15;
 
 // platform object
 const platform = {
-    x: 150,
-    y: 400,
-    width: 500,
-    height: 20
+  x: 150,
+  y: 400,
+  width: 500,
+  height: 20,
 };
-
 
 /* ------------------- create elements ------------------- */
 
@@ -123,114 +120,114 @@ document.body.appendChild(gameOverText);
 /* -------------------  classes  ------------------- */
 
 class character {
-    constructor(x, y, color) {
-        this.x = x;
-        this.y = y;
-        this.width = 50;
-        this.height = 50;
-        this.color = color;
-        this.velocityX = 0;
-        this.velocityY = 0;
-        this.grounded = false;
-        this.isAttacking = false;
-        this.health = 100;
-        this.faceDirection = 1;
-        this.jumpsLeft = 2;
-    }
-    
-    draw() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-    
-    update(opponent) {
-        // gravity
-        this.velocityY += gravity;
-        this.y += this.velocityY;
-        this.x += this.velocityX;
-        this.grounded = false;
+  constructor(x, y, color) {
+    this.x = x;
+    this.y = y;
+    this.width = 50;
+    this.height = 50;
+    this.color = color;
+    this.velocityX = 0;
+    this.velocityY = 0;
+    this.grounded = false;
+    this.isAttacking = false;
+    this.health = 100;
+    this.faceDirection = 1;
+    this.jumpsLeft = 2;
+  }
 
-        // ground-friction simulation
-        this.velocityX *= 0.9;
+  draw() {
+    ctx.fillStyle = this.color;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+  }
 
-        //platform collision
-        if (
-            this.y + this.height >= platform.y && 
-            this.y + this.height <= platform.y + 10 && 
-            this.x + this.width > platform.x && 
-            this.x < platform.x + platform.width
-            ) {
-                this.y = platform.y - this.height;
-                this.velocityY = 0;
-                this.grounded = true;
-                this.jumpsLeft = 2;
-            } else {
-                this.grounded = false;
-        }
+  update(opponent) {
+    // gravity
+    this.velocityY += gravity;
+    this.y += this.velocityY;
+    this.x += this.velocityX;
+    this.grounded = false;
 
-        // player collision
-        if (this.playerCollision(opponent)) {
-            if (this.velocityX > 0) {
-                this.x = opponent.x - this.width;
-            } else if (this.velocityX < 0) {
-                this.x = opponent.x + opponent.width;
-            }
-            this.velocityX = 0;
-        }
+    // ground-friction simulation
+    this.velocityX *= 0.9;
 
-        if (this.y > canvas.height) {
-            this.health = 0;
-            updateHealthBars();
-            endGame(opponent);
-        }
+    //platform collision
+    if (
+      this.y + this.height >= platform.y &&
+      this.y + this.height <= platform.y + 10 &&
+      this.x + this.width > platform.x &&
+      this.x < platform.x + platform.width
+    ) {
+      this.y = platform.y - this.height;
+      this.velocityY = 0;
+      this.grounded = true;
+      this.jumpsLeft = 2;
+    } else {
+      this.grounded = false;
     }
 
-    playerCollision(opponent) {
-        return (
-            this.x < opponent.x + opponent.width &&
-            this.x + this.width > opponent.x &&
-            this.y + this.height > opponent.y + 10
-        )
+    // player collision
+    if (this.playerCollision(opponent)) {
+      if (this.velocityX > 0) {
+        this.x = opponent.x - this.width;
+      } else if (this.velocityX < 0) {
+        this.x = opponent.x + opponent.width;
+      }
+      this.velocityX = 0;
     }
 
-    attack(opponent) {
-        if (!this.isAttacking) {
-            this.isAttacking = true;
-        setTimeout(() => (this.isAttacking = false), 500);
-        
-        const attackRange = 30;
-        const attackX = this.x + (this.faceDirection * attackRange);
-
-        if (
-            attackX < opponent.x + opponent.width &&
-            attackX + attackRange > opponent.x &&
-            this.y < opponent.y + opponent.height &&
-            this.y + this.height > opponent.y
-            ) {
-                opponent.takeDamage(this);
-            }
-        }
+    if (this.y > canvas.height) {
+      this.health = 0;
+      updateHealthBars();
+      endGame(opponent);
     }
+  }
 
-    takeDamage(attacker) {
-        this.health -= 10;
+  playerCollision(opponent) {
+    return (
+      this.x < opponent.x + opponent.width &&
+      this.x + this.width > opponent.x &&
+      this.y + this.height > opponent.y + 10
+    );
+  }
 
-        updateHealthBars();
+  attack(opponent) {
+    if (!this.isAttacking) {
+      this.isAttacking = true;
+      setTimeout(() => (this.isAttacking = false), 500);
 
-        if (this.health <= 0) {
-            this.health = 0;
-            endGame(attacker);
-        }
-        this.knockback(attacker);
+      const attackRange = 30;
+      const attackX = this.x + this.faceDirection * attackRange;
+
+      if (
+        attackX < opponent.x + opponent.width &&
+        attackX + attackRange > opponent.x &&
+        this.y < opponent.y + opponent.height &&
+        this.y + this.height > opponent.y
+      ) {
+        opponent.takeDamage(this);
+      }
     }
+  }
 
-    knockback(attacker) {
-        const knockbackForce = 8;
-        const upwardForce = -7;
+  takeDamage(attacker) {
+    this.health -= 10;
 
-        this.velocityX = attacker.faceDirection * knockbackForce;
-        this.velocityY = upwardForce;
+    updateHealthBars();
+
+    if (this.health <= 0) {
+      this.health = 0;
+      endGame(attacker);
     }
+    this.knockback(attacker);
+  }
+
+  knockback(attacker) {
+    const knockbackForce = 8;
+    const upwardForce = -7;
+
+    this.velocityX = attacker.faceDirection * knockbackForce;
+    this.velocityY = upwardForce;
+  }
 }
 
 function updateHealthBars() {
@@ -238,113 +235,102 @@ function updateHealthBars() {
   p2HealthBar.style.width = `${player2.health * 3}px`;
 }
 
-
 const player1 = new character(200, 350, 'white');
 const player2 = new character(550, 350, 'red');
-
-const keys = {
-    a: false,
-    d: false,
-    w: false,
-    ArrowLeft: false,
-    ArrowRight: false,
-    ArrowUp: false
-};
 
 /* ------------------- functions ------------------- */
 
 // resize canvas
 function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 
 let gameActive = true;
 
 // draw platform
 function gameLoop() {
-    if (!gameActive) return;
+  if (!gameActive) return;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = 'brown';
-    ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
+  ctx.fillStyle = 'brown';
+  ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
 
-    player1.update(player2);
-    player2.update(player1);
-    player1.draw();
-    player2.draw();
+  player1.update(player2);
+  player2.update(player1);
+  player1.draw();
+  player2.draw();
 
-    updateHealthBars();
+  updateHealthBars();
 
-    requestAnimationFrame(gameLoop);
-};
+  requestAnimationFrame(gameLoop);
+}
 
 function endGame(winner) {
-    gameActive = false;
+  gameActive = false;
 
-    let loser = winner === player1 ? player2 : player1;
+  let loser = winner === player1 ? player2 : player1;
 
-    gameOverText.style.display = 'block';
-    gameOverText.innerHTML = `<h2>${winner.color.toUpperCase()} WINS!</h2>`;
+  gameOverText.style.display = 'block';
+  gameOverText.innerHTML = `<h2>${winner.color.toUpperCase()} WINS!</h2>`;
 
-    window.removeEventListener('keydown', handleKeyDown);
-    window.removeEventListener('keyup', handleKeyUp);
+  window.removeEventListener('keydown', handleKeyDown);
+  window.removeEventListener('keyup', handleKeyUp);
 
-    const restartButton = document.createElement('button');
-    restartButton.id = 'restart-button';
-    restartButton.innerHTML = 'Restart Game';
-    document.body.appendChild(restartButton);
+  const restartButton = document.createElement('button');
+  restartButton.id = 'restart-button';
+  restartButton.innerHTML = 'Restart Game';
+  document.body.appendChild(restartButton);
 
-    restartButton.addEventListener('click', () => {
-        window.location.reload();
-    });
-};
+  restartButton.addEventListener('click', () => {
+    window.location.reload();
+  });
+}
 
 function handleKeyDown(event) {
-    switch (event.key) {
-      case "a":
-        player1.velocityX = -playerSpeed;
-        player1.faceDirection = -1;
-        break;
-      case "d":
-        player1.velocityX = playerSpeed;
-        player1.faceDirection = 1;
-        break;
-      case "w":
-        if (player1.jumpsLeft > 0) {
-            player1.velocityY = jumpSpeed;
-            player1.jumpsLeft--;
-        }
-        break;
-      case " ":
-        player1.attack(player2);
-        break;
-      case "ArrowLeft":
-        player2.velocityX = -playerSpeed;
-        player2.faceDirection = -1;
-        break;
-      case "ArrowRight":
-        player2.velocityX = playerSpeed;
-        player2.faceDirection = 1;
-        break;
-      case "ArrowUp":
-        if (player2.jumpsLeft > 0) {
-          player2.velocityY = jumpSpeed;
-          player2.jumpsLeft--;
-        }
-        break;
-      case "Enter":
-        player2.attack(player1);
-        break;
-    }
-};
+  switch (event.key) {
+    case 'a':
+      player1.velocityX = -playerSpeed;
+      player1.faceDirection = -1;
+      break;
+    case 'd':
+      player1.velocityX = playerSpeed;
+      player1.faceDirection = 1;
+      break;
+    case 'w':
+      if (player1.jumpsLeft > 0) {
+        player1.velocityY = jumpSpeed;
+        player1.jumpsLeft--;
+      }
+      break;
+    case ' ':
+      player1.attack(player2);
+      break;
+    case 'ArrowLeft':
+      player2.velocityX = -playerSpeed;
+      player2.faceDirection = -1;
+      break;
+    case 'ArrowRight':
+      player2.velocityX = playerSpeed;
+      player2.faceDirection = 1;
+      break;
+    case 'ArrowUp':
+      if (player2.jumpsLeft > 0) {
+        player2.velocityY = jumpSpeed;
+        player2.jumpsLeft--;
+      }
+      break;
+    case 'Enter':
+      player2.attack(player1);
+      break;
+  }
+}
 
 function handleKeyUp(event) {
-    if (event.key === "a" || event.key === "d") player1.velocityX = 0;
-    if (event.key === "ArrowLeft" || event.key === "ArrowRight") player2.velocityX = 0; 
-};
-
+  if (event.key === 'a' || event.key === 'd') player1.velocityX = 0;
+  if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') player2.velocityX = 0;
+}
 
 gameLoop();
 
