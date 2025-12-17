@@ -1,0 +1,25 @@
+{
+  "name": "project-1-browser-game",
+  "version": "1.0.0",
+  "description": "![A screenshot of Box Brawl](./assets/Screenshot%202025-02-10%20at%206.42.42%20AM.png)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grey-Altr/project-1-browser-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grey-Altr/project-1-browser-game/issues"
+  },
+  "homepage": "https://github.com/Grey-Altr/project-1-browser-game#readme",
+  "devDependencies": {
+    "vite": "^7.3.0"
+  }
+}
